@@ -3,9 +3,9 @@ import java.util.List;
 
 public class Node {
 
-	int depth;
-	int attriId;
-	int classType = -1;
+	int depth; 
+	int attriId; // attribute id = index of an attribute
+	int classType = -1; // {0, 1}
 	Node left, right;
 	UnitSet uset;
 

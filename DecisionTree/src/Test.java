@@ -2,21 +2,6 @@ import java.io.IOException;
 
 public class Test {
 	
-//	public int accuracy() {
-//		
-//		
-//	}
-//	
-//	public prediction() {
-//		
-//	}
-//	
-	
-//	public arrange() {
-//		
-//		
-//	}
-	
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
@@ -24,7 +9,7 @@ public class Test {
 		// USER INPUT
 		int l = Integer.parseInt(args[0]);
 		int k = Integer.parseInt(args[1]);
-		//String trainfile = "/Users/Rachel/CISC484/data_sets1/training_set.csv";
+
 		String trainfile = args[2];
 		String validfile = args[3];
 		String testfile = args[4];
@@ -40,6 +25,7 @@ public class Test {
 		}
 		
 		
+		// Converting CSV into a List of Units
 		UnitSet trainTree = new UnitSet(trainfile);
 		UnitSet validTree = new UnitSet(validfile);
 		UnitSet testTree = new UnitSet(testfile);
@@ -57,13 +43,11 @@ public class Test {
 		double Accuracy = 0.0;
 		
 		System.out.println(" This is for ENTRIOPY DT");
-		System.out.println("Accuracy test file");
-		
-		
 		
 		
 		Accuracy = tree.pacc(testTree.unitList);
 //		
+		// Calculating accuracy of decision tree on training, validaation, and test data respectively
 		System.out.println("Accuracy Train is : " + tree.pacc(trainTree.unitList));
 		System.out.println("Accuracy Valid is : " + tree.pacc(validTree.unitList));
 		System.out.println("Accuracy Test is : " + tree.pacc(testTree.unitList));
@@ -72,7 +56,7 @@ public class Test {
 		tree = tree.pruneTree(l, k);
 		
 		System.out.println("AfterPrune -----" );
-
+		// Calculating accuracy of decision tree on training, validation, and test data respectively after pruning
 		System.out.println("Accuracy Train is : " + tree.pacc(trainTree.unitList));
 		System.out.println("Accuracy Valid is : " + tree.pacc(validTree.unitList));
 		System.out.println("Accuracy Test is : " + tree.pacc(testTree.unitList));
@@ -90,7 +74,7 @@ public class Test {
 		}
 		
 		Accuracy = vtree.pacc(testTree.unitList);
-//		
+//		// Calculating accuracy of decision tree on training, validaation, and test data respectively
 		System.out.println("Accuracy Train is : " + vtree.pacc(trainTree.unitList));
 		System.out.println("Accuracy Valid is : " + vtree.pacc(validTree.unitList));
 		System.out.println("Accuracy Test is : " + vtree.pacc(testTree.unitList));
@@ -99,7 +83,7 @@ public class Test {
 		vtree = vtree.pruneTree(l, k);
 		
 		System.out.println("AfterPrune -----" );
-
+		// Calculating accuracy of decision tree on training, validaation, and test data respectively after pruning
 		System.out.println("Accuracy Train is : " + vtree.pacc(trainTree.unitList));
 		System.out.println("Accuracy Valid is : " + vtree.pacc(validTree.unitList));
 		System.out.println("Accuracy Test is : " + vtree.pacc(testTree.unitList));
