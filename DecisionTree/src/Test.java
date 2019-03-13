@@ -30,21 +30,19 @@ public class Test {
 		String testfile = args[4];
 		boolean toprint = false;
 		String toprint_input = args[5];
-		if(toprint_input == "yes"){
+		if(toprint_input.contains("yes")){
 			toprint = true;
-		} else if(toprint_input == "no"){
+		} else if(toprint_input.contains("no")){
 			toprint = false;
 		} else{
 			System.out.println("Error: please type 'yes' or 'no' for toprint argument");
-			System.out.println("You typed " + args[5]);
+			System.out.println("You typed '" + args[5] + "'");
 		}
 		
 		
 		UnitSet trainTree = new UnitSet(trainfile);
 		UnitSet validTree = new UnitSet(validfile);
 		UnitSet testTree = new UnitSet(testfile);
-		
-		
 		
 		
 		//Generate tree by Entropy
